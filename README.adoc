@@ -30,23 +30,25 @@ $ shadow-cljs watch main
 
 if you don't have `yarn`, use `npm install` instead.
 
-== Running a Datomic-based Server
+== Running the Server
 
-The example code for Datomic components is in the `src/datomic` folder, along with a custom
-`development.clj`. It defaults to using an in-memory datomic-free database.
-
-You can run it with the `:datomic` deps alias:
+The server in this template uses an in-memory datomic-free database. You can start it from the REPL by including the
+deps `:dev` alias.
 
 [source, bash]
 -----
 $ clj -A:dev
 user=> (clojure.core/require 'development)
-user=> (development/go)
+user=> (development/start)
 -----
 
 == Restarting
 
-The `development/restart` will stop the server, reload source, and start the server.
+There are `stop`, `start`, `fast-restart`, and `restart` functions in `development`.
+The `restart` function will stop the server, reload all source, and start it again. You can often get by
+with manually evaluating functions with a running server, but if you modify something that is closed over during
+start (such as a function that is embedded in the middleware) you'll have to load the appropriate files and stop/start.
+While the source is small it is often less hassle to just use `restart`.
 
 == LICENSE
 

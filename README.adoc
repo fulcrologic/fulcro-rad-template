@@ -2,6 +2,21 @@
 
 A RAD template with Datomic Free preconfigured. Relatively easy to swap out back-end.
 
+== Usage
+
+Clone this repository (it is a template repo), and then use the `rename-project.sh`
+script to set your desired package name:
+
+[source, bash]
+-----
+$ ./rename-project.sh com.my-domain.app-name
+-----
+
+Be sure to use hyphens, NOT underscores. The rename script will correct the filenames
+accordingly.
+
+The project should now build and run.
+
 == Building the SPA
 
 You must compile the CLJS source to run the client. If you want to be

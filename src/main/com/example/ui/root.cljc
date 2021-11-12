@@ -1,4 +1,5 @@
 (ns com.example.ui.root
+  "App UI root. Standard Fulcro."
   (:require
     #?@(:cljs [[com.fulcrologic.semantic-ui.modules.dropdown.ui-dropdown :refer [ui-dropdown]]
                [com.fulcrologic.semantic-ui.modules.dropdown.ui-dropdown-menu :refer [ui-dropdown-menu]]

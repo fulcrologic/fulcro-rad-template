@@ -1,4 +1,5 @@
 (ns com.example.ui.account-forms
+  "Sample RAD-based components"
   (:require
     #?(:clj  [com.fulcrologic.fulcro.dom-server :as dom :refer [div label input]]
        :cljs [com.fulcrologic.fulcro.dom :as dom :refer [div label input]])

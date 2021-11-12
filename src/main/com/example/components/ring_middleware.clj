@@ -27,6 +27,8 @@
       [:script (str "var fulcro_network_csrf_token = '" csrf-token "';")]]
      [:body
       [:div#app
+       ;; This is what the app will initially render. This also gives us a way to prevent initial flicker as the app
+       ;; loads
        [:div.ui.active.dimmer
         [:div.ui.large.text.loader "Loading"]]]
       [:script {:src "/js/main/main.js"}]]]))
@@ -46,12 +48,12 @@
      :body   {}}))
 
 (defn wrap-html-routes [ring-handler]
+  ;; We want to default to the index since HTML5 routes will come here
   (fn [{:keys [uri anti-forgery-token] :as req}]
     (if (or (str/starts-with? uri "/api")
           (str/starts-with? uri "/files")
           (str/starts-with? uri "/js"))
       (ring-handler req)
-
       (-> (resp/response (index anti-forgery-token))
         (resp/content-type "text/html")))))
 
@@ -60,7 +62,9 @@
   (let [defaults-config (:ring.middleware/defaults-config config/config)]
     (-> not-found-handler
       (wrap-api "/api")
+      ;; Fulcro support for integrated file uploads
       (file-upload/wrap-mutation-file-uploads {})
+      ;; RAD integration of forms with binary uploads
       (blob/wrap-blob-service "/files" bs/file-blob-store)
       (server/wrap-transit-params {})
       (server/wrap-transit-response {})

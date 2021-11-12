@@ -1,5 +1,6 @@
 (ns com.example.model-rad.file
-  "RAD definition of a `file`"
+  "RAD definition of a `file`. Attributes only. These will be used all over the app, so try to limit
+   requires to model code and library code."
   (:require
     [com.fulcrologic.rad.attributes :refer [defattr]]
     [com.fulcrologic.rad.attributes-options :as ao]

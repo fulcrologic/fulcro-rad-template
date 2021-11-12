@@ -1,5 +1,6 @@
 (ns com.example.model-rad.account
-  "RAD definition of an `account`"
+  "RAD definition of an `account`. Attributes only. These will be used all over the app, so try to limit
+   requires to model code and library code."
   (:require
     [com.fulcrologic.rad.form-options :as fo]
     [com.fulcrologic.rad.attributes :as attr :refer [defattr]]

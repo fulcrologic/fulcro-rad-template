@@ -14,5 +14,5 @@ rsync -a src/test/com/example/* src/test/$directory/
 rm -rf src/main/com/example src/test/com/example
 for f in shadow-cljs.edn Makefile $(find src/dev src/main/$directory src/test/$directory -type f)
 do
-  sed -i -e "s/com.example/$1/g" $f
+  sed -i '' -e "s/com.example/$1/g" $f
 done

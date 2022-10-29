@@ -2,6 +2,8 @@
 
 A RAD template with Datomic Free preconfigured. Relatively easy to swap out back-end.
 
+NOTE: NOW REQUIRES you get dev-local from Datomic: See https://docs.datomic.com/cloud/dev-local.html
+
 == Usage
 
 Clone this repository (it is a template repo), and then use the `rename-project.sh`

@@ -7,7 +7,7 @@
     [com.wsscode.pathom.connect :as pc :refer [defresolver defmutation]]
     [com.fulcrologic.rad.database-adapters.datomic-options :as do]
     [com.fulcrologic.rad.ids :refer [new-uuid]]
-    [datomic.api :as d]
+    [datomic.client.api :as d]
     [taoensso.timbre :as log]))
 
 (defn new-account
@@ -24,14 +24,15 @@
    (defn get-all-accounts
      [env query-params]
      (if-let [db (some-> (get-in env [do/databases :production]) deref)]
-       (let [ids (if (:show-inactive? query-params)
-                   (d/q [:find '[?uuid ...]
-                         :where
-                         ['?dbid :account/id '?uuid]] db)
-                   (d/q [:find '[?uuid ...]
-                         :where
-                         ['?dbid :account/active? true]
-                         ['?dbid :account/id '?uuid]] db))]
+       (let [ids (map first
+                   (if (:show-inactive? query-params)
+                     (d/q [:find '?uuid
+                           :where
+                           ['?dbid :account/id '?uuid]] db)
+                     (d/q [:find '?uuid
+                           :where
+                           ['?dbid :account/active? true]
+                           ['?dbid :account/id '?uuid]] db)))]
          (mapv (fn [id] {:account/id id}) ids))
        (log/error "No database atom for production schema!"))))
 

@@ -10,8 +10,7 @@
     [hiccup.page :refer [html5]]
     [mount.core :refer [defstate]]
     [ring.middleware.defaults :refer [wrap-defaults]]
-    [ring.util.response :as resp]
-    [taoensso.timbre :as log]))
+    [ring.util.response :as resp]))
 
 (defn index [csrf-token]
   (html5

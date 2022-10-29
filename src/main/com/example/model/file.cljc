@@ -4,7 +4,6 @@
    DO NOT require a RAD model file in this ns. This ns is meant to be an ultimate
    leaf of the requires. Only include library code."
   (:require
-    [com.fulcrologic.rad.ids :refer [new-uuid]]
     [com.fulcrologic.rad.type-support.date-time :as dt]))
 
 (defn new-file

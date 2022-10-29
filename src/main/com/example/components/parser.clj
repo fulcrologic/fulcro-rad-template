@@ -13,7 +13,7 @@
 
     [com.fulcrologic.rad.attributes :as attr]
     [com.fulcrologic.rad.blob :as blob]
-    [com.fulcrologic.rad.database-adapters.datomic :as datomic]
+    [com.fulcrologic.rad.database-adapters.datomic-cloud :as datomic]
     [com.fulcrologic.rad.form :as form]
     [com.fulcrologic.rad.pathom :as pathom]
     [mount.core :refer [defstate]]

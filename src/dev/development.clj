@@ -1,14 +1,11 @@
 (ns development
   (:require
-    [clojure.pprint :refer [pprint]]
-    [clojure.repl :refer [doc source]]
-    [clojure.tools.namespace.repl :as tools-ns :refer [disable-reload! refresh clear set-refresh-dirs]]
+    [clojure.tools.namespace.repl :as tools-ns :refer [set-refresh-dirs]]
     [com.example.components.database :refer [datomic-connections]]
     [com.example.components.ring-middleware]
     [com.example.components.server]
     [com.fulcrologic.rad.ids :refer [new-uuid]]
     [com.fulcrologic.rad.type-support.date-time :as dt]
-    [datomic.api :as d]
     [mount.core :as mount]
     [taoensso.timbre :as log]))
 

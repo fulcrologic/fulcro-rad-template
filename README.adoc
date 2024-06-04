@@ -1,8 +1,6 @@
 = Fulcro RAD Template
 
-A RAD template with Datomic Free preconfigured. Relatively easy to swap out back-end.
-
-NOTE: NOW REQUIRES you get dev-local from Datomic: See https://docs.datomic.com/cloud/dev-local.html
+A RAD template with Datomic Cloud preconfigured. Relatively easy to swap out back-end.
 
 == Usage
 

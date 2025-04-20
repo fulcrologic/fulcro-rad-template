@@ -8,12 +8,13 @@
     "@js-joda/timezone": "^2.10.0",
     "big.js": "6.1.1",
     "intl-messageformat": "^9.9.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-toastify": "^11.0.5",
     "semantic-ui-react": "^2.0.4",
     "victory": "^36.2.0"
   },
   "devDependencies": {
-    "shadow-cljs": "2.15.12"
+    "shadow-cljs": "2.28.23"
   }
 }

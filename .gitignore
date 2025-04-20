@@ -22,3 +22,6 @@ target
 .shadow-cljs
 .clj-kondo/.cache
 .clj-kondo
+.portal
+.lsp
+.calva

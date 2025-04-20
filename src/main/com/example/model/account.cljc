@@ -4,9 +4,10 @@
    DO NOT require a RAD model file in this ns. This ns is meant to be an ultimate
    leaf of the requires. Only include library code."
   (:require
-    [com.wsscode.pathom.connect :as pc :refer [defresolver defmutation]]
+    #_[com.wsscode.pathom.connect :as pc :refer [defresolver defmutation]]
     [com.fulcrologic.rad.database-adapters.datomic-options :as do]
     [com.fulcrologic.rad.ids :refer [new-uuid]]
+    [com.wsscode.pathom3.connect.operation :as pco]
     [datomic.client.api :as d]
     [taoensso.timbre :as log]))
 
@@ -37,8 +38,8 @@
        (log/error "No database atom for production schema!"))))
 
 #?(:clj
-   (defresolver all-accounts-resolver [env params]
-     {::pc/output [{:account/all-accounts [:account/id]}]}
+   (pco/defresolver all-accounts-resolver [env params]
+     {::pco/output [{:account/all-accounts [:account/id]}]}
      {:account/all-accounts (get-all-accounts env params)}))
 
 (def resolvers [all-accounts-resolver])

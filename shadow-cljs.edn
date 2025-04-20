@@ -1,4 +1,4 @@
-{:deps     {:aliases [:cljs :test]}
+{:deps     {:aliases [:cljs :dev :test]}
  :nrepl    {:port 9000}
  :jvm-opts ["-Xmx2G"]
  :builds   {:main     {:target     :browser
@@ -18,8 +18,10 @@
                                      "@js-joda/timezone"
                                      {:target  :npm
                                       :require "@js-joda/timezone/dist/js-joda-timezone-10-year-range.min.js"}}}
-                       :devtools   {:preloads   [com.fulcrologic.fulcro.inspect.preload
-                                                 com.fulcrologic.fulcro.inspect.dom-picker-preload]
+                       :devtools   {:preloads   [com.fulcrologic.devtools.chrome-preload
+                                                 #_com.fulcrologic.devtools.electron-preload
+                                                 #_com.fulcrologic.fulcro.inspect.dom-picker-preload
+                                                 ]
                                     :after-load com.example.client/refresh}}
 
             :test     {:target           :browser-test

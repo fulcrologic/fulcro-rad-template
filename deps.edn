@@ -1,47 +1,50 @@
 {:paths   ["src/main" "resources"]
 
- :deps    {org.clojure/clojure                    {:mvn/version "1.10.3"}
+ :deps    {org.clojure/clojure                    {:mvn/version "1.12.0"}
 
-           com.fulcrologic/fulcro                 {:mvn/version "3.5.28"}
-           com.fulcrologic/fulcro-rad             {:mvn/version "1.3.2"}
-           com.fulcrologic/fulcro-rad-semantic-ui {:mvn/version "1.2.15"}
-           com.fulcrologic/fulcro-i18n            {:mvn/version "0.0.5-alpha"}
+           com.fulcrologic/fulcro                 {:mvn/version "3.8.3"}
+           com.fulcrologic/fulcro-rad             {:mvn/version "1.6.12"}
+           com.fulcrologic/fulcro-rad-semantic-ui {:mvn/version "1.4.6"}
+           com.fulcrologic/fulcro-i18n            {:mvn/version "1.1.2"}
+           com.fulcrologic/fulcro-inspect         {:mvn/version "1.0.4"}
 
            ;; General extras
            cljc.java-time/cljc.java-time          {:mvn/version "0.1.18"}
-           edn-query-language/eql                 {:mvn/version "1.0.2"}
-           com.fulcrologic/guardrails             {:mvn/version "1.1.11"}
+           edn-query-language/eql                 {:mvn/version "2021.07.18"}
+           com.fulcrologic/guardrails             {:mvn/version "1.2.9"}
 
            ;; Server
-           mount/mount                            {:mvn/version "0.1.12"}
-           com.wsscode/pathom                     {:mvn/version "2.4.0"}
+           mount/mount                            {:mvn/version "0.1.21"}
+           com.wsscode/pathom3                    {:mvn/version "2025.01.16-alpha"}
            hiccup/hiccup                          {:mvn/version "1.0.5"}
-           ring/ring-defaults                     {:mvn/version "0.3.4"}
-           ring/ring-core                         {:mvn/version "1.9.6"}
-           http-kit/http-kit                      {:mvn/version "2.6.0"}
-           com.datomic/local                      {:mvn/version "1.0.277"}
-           com.fulcrologic/fulcro-rad-datomic     {:mvn/version "1.3.2"}
+           ring/ring-defaults                     {:mvn/version "0.6.0"}
+           ring/ring-core                         {:mvn/version "1.14.1"}
+           http-kit/http-kit                      {:mvn/version "2.8.0"}
+           com.fulcrologic/fulcro-rad-datomic     {:mvn/version "1.5.6"}
+           com.datomic/local                      {:mvn/version "1.0.291"}
+           com.datomic/client-cloud               {:mvn/version "1.0.131"}
 
            ;; Unified logging for server
-           com.taoensso/timbre                    {:mvn/version "5.1.2"}
-           org.slf4j/log4j-over-slf4j             {:mvn/version "1.7.30"} ; auto sends log4j to slf4j
-           org.slf4j/jul-to-slf4j                 {:mvn/version "1.7.30"} ; auto sends java.util.logging to slf4j
-           org.slf4j/jcl-over-slf4j               {:mvn/version "1.7.30"} ; auto-sends java.common.logging to slf4j
-           com.fzakaria/slf4j-timbre              {:mvn/version "0.3.19"} ; hooks slf4j to timbre
+           com.taoensso/timbre                    {:mvn/version "6.6.1"}
+           org.slf4j/log4j-over-slf4j             {:mvn/version "2.0.17"} ; auto sends log4j to slf4j
+           org.slf4j/jul-to-slf4j                 {:mvn/version "2.0.17"} ; auto sends java.util.logging to slf4j
+           org.slf4j/jcl-over-slf4j               {:mvn/version "2.0.17"} ; auto-sends java.common.logging to slf4j
+           com.fzakaria/slf4j-timbre              {:mvn/version "0.4.1"} ; hooks slf4j to timbre
 
            }
 
  :aliases {:test      {:extra-paths ["src/test"]
                        :extra-deps  {fulcrologic/fulcro-spec {:mvn/version "3.1.12"}}}
 
-           :cljs      {:extra-deps {org.clojure/clojurescript                       {:mvn/version "1.10.879"}
-                                    thheller/shadow-cljs                            {:mvn/version "2.15.12"}
-                                    com.google.javascript/closure-compiler-unshaded {:mvn/version "v20210505"}
-                                    com.fulcrologic/semantic-ui-wrapper             {:mvn/version "2.0.1"}
-                                    binaryage/devtools                              {:mvn/version "1.0.4"}}}
+           :cljs      {:extra-deps {org.clojure/clojurescript                       {:mvn/version "1.11.132"}
+                                    thheller/shadow-cljs                            {:mvn/version "2.28.23"}
+                                    com.fasterxml.jackson.core/jackson-core         {:mvn/version "2.18.3"}
+                                    com.google.javascript/closure-compiler-unshaded {:mvn/version "v20240317"}
+                                    com.fulcrologic/semantic-ui-wrapper             {:mvn/version "2.1.4"}
+                                    binaryage/devtools                              {:mvn/version "1.0.7"}}}
 
            :run-tests {:main-opts  ["-m" "kaocha.runner"]
-                       :extra-deps {lambdaisland/kaocha {:mvn/version "1.71.1119"}}}
+                       :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}}}
 
            :dev       {:extra-paths ["src/dev"]
-                       :extra-deps  {org.clojure/tools.namespace {:mvn/version "1.3.0"}}}}}
+                       :extra-deps  {org.clojure/tools.namespace {:mvn/version "1.5.0"}}}}}

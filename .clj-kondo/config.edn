@@ -1,3 +1,1 @@
-{:lint-as {mount.core/defstate                  clojure.core/def
-
-           }}
+{:lint-as {mount.core/defstate                  clojure.core/def}}

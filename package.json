@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "A template for building Fulcro RAD apps",
   "packageManager": "pnpm@11.21.0",
-  "scripts": {
-    "preinstall": "npx only-allow@1.2.2 pnpm"
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.21.0"
+    }
   },
   "dependencies": {
     "@js-joda/core": "4.3.1",

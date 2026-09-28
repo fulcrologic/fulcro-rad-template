@@ -24,11 +24,11 @@ able to edit it, just start a shadow-cljs watch:
 
 [source, bash]
 -----
-$ yarn
-$ shadow-cljs watch main
+$ pnpm install
+$ pnpm exec shadow-cljs watch main
 -----
 
-if you don't have `yarn`, use `npm install` instead.
+This project uses https://pnpm.io[pnpm]; `npm` and `yarn` are refused.
 
 == Running the Server
 
